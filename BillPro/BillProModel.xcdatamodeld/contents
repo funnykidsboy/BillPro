@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+  <entity name="Order" representedClassName="Order" syncable="YES">
+    <attribute name="id" optional="NO" attributeType="UUIDAttributeType" usesScalarValueType="NO"/>
+    <attribute name="customerName" optional="NO" attributeType="String"/>
+    <attribute name="customerPhone" optional="NO" attributeType="String"/>
+    <attribute name="deliveryDate" optional="NO" attributeType="Date"/>
+    <attribute name="createdAt" optional="NO" attributeType="Date"/>
+    <attribute name="discountValue" optional="NO" attributeType="DecimalAttributeType" defaultValueString="0"/>
+    <attribute name="discountType" optional="NO" attributeType="String" defaultValueString="amount"/>
+    <attribute name="note" optional="YES" attributeType="String"/>
+    <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrderItem" inverseName="order" inverseEntity="OrderItem"/>
+  </entity>
+  <entity name="OrderItem" representedClassName="OrderItem" syncable="YES">
+    <attribute name="id" optional="NO" attributeType="UUIDAttributeType" usesScalarValueType="NO"/>
+    <attribute name="name" optional="NO" attributeType="String"/>
+    <attribute name="unitPrice" optional="NO" attributeType="DecimalAttributeType" defaultValueString="0"/>
+    <attribute name="quantity" optional="NO" attributeType="DecimalAttributeType" defaultValueString="0"/>
+    <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="items" inverseEntity="Order"/>
+  </entity>
+  <entity name="CatalogItem" representedClassName="CatalogItem" syncable="YES">
+    <attribute name="id" optional="NO" attributeType="UUIDAttributeType" usesScalarValueType="NO"/>
+    <attribute name="name" optional="NO" attributeType="String"/>
+    <attribute name="defaultPrice" optional="NO" attributeType="DecimalAttributeType" defaultValueString="0"/>
+    <attribute name="unit" optional="NO" attributeType="String" defaultValueString="cái"/>
+    <attribute name="isActive" optional="NO" attributeType="Boolean" defaultValueString="YES"/>
+  </entity>
+</model>
