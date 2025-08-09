@@ -25,23 +25,20 @@ jobs:
       - name: Build .app (no signing, print logs to console)
         run: |
           set -x
-          echo "=== Danh sách scheme/project ==="
-          xcodebuild -list
-          echo "=== Bắt đầu build ==="
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
-            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            build
+          xcodebuild -list -project BillPro.xcodeproj
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             build
 
       - name: Find built app
         id: findapp
         run: |
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "BillPro.app" -type d | head -n 1)
-          echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
+          echo "APP_PATH=$APP_PATH"
+          echo "APP_PATH=$APP_OUTPUT" >> $GITHUB_OUTPUT
 
       - name: Ad-hoc sign with ldid (TrollStore)
         run: |
           mkdir -p signed
-          cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
+          cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app || true
           # Minimal entitlements for TrollStore permasigning
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
@@ -54,15 +51,21 @@ jobs:
           </dict>
           </plist>
           PLIST
-          ldid -Ssigned/entitlements.plist signed/BillPro.app
+          if [ -d "signed/BillPro.app" ]; then ldid -Ssigned/entitlements.plist signed/BillPro.app; fi
 
       - name: Package IPA
         run: |
-          mkdir -p Payload
-          cp -R signed/BillPro.app Payload/
-          zip -r BillPro_iOS15_TrollStore.ipa Payload
+          if [ -d "signed/BillPro.app" ]; then
+            mkdir -p Payload
+            cp -R signed/BillPro.app Payload/
+            zip -r BillPro_iOS15_TrollStore.ipa Payload
+          else
+            echo "No app to package"
+            exit 1
+          fi
 
       - name: Upload IPA
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: BillPro-iOS15-IPA
