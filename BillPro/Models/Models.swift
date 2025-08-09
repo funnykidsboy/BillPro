@@ -25,7 +25,7 @@ extension Order {
     var itemsArray: [OrderItem] { (items as? Set<OrderItem> ?? []).sorted { $0.createdAt < $1.createdAt } }
 
     var subtotal: Decimal { itemsArray.reduce(Decimal(0)) { $0 + $1.amount } }
-    var totalQuantity: Decimal { itemsArray.reduce(0 as Decimal) { -e + .quantity.decimalValue } } }
+    var totalQuantity: Decimal { itemsArray.reduce(0 as Decimal) { total, item in total + (item.quantity?.decimalValue ?? 0) } } } }
     var discountComputed: Decimal {
         let sub = subtotal
         let val = discountValue as Decimal
