@@ -18,10 +18,11 @@ jobs:
         run: |
           set -x
           xcodebuild -list
+          touch build.log
           set +e
           xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            build | tee build.log
+            build 2>&1 | tee build.log
           echo "BUILD_EXIT_CODE=$?" >> $GITHUB_ENV
           set -e
       - name: Upload build log
@@ -39,7 +40,6 @@ jobs:
         run: |
           mkdir -p signed
           cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
-          # Minimal entitlements for TrollStore permasigning
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
