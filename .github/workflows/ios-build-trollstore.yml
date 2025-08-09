@@ -56,29 +56,45 @@ jobs:
           test -f "$APP_PATH/Info.plist" || { echo "::error::Info.plist missing in app bundle"; exit 1; }
           echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
 
-      - name: Ad-hoc sign with ldid (auto-detect executable)
+      - name: Ad-hoc sign with ldid (auto-detect executable, robust)
         run: |
-          set -e
+          set -euo pipefail
           APP_PATH="${{ steps.verify.outputs.APP_PATH }}"
           APP_NAME=$(basename "$APP_PATH")
+
+          echo "Copy app to signed/"
+          rm -rf "signed/$APP_NAME"
           mkdir -p signed
           cp -R "$APP_PATH" "signed/$APP_NAME"
 
-          # Try to read CFBundleExecutable from Info.plist
-          EXEC_NAME=$(defaults read "$APP_PATH/Info.plist" CFBundleExecutable 2>/dev/null || true)
+          echo "Detect CFBundleExecutable via PlistBuddy"
+          EXEC_NAME=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$APP_PATH/Info.plist" 2>/dev/null || true)
 
-          if [ -z "$EXEC_NAME" ] || [ ! -f "$APP_PATH/$EXEC_NAME" ]; then
-            echo "CFBundleExecutable not found or missing file, searching for a Mach-O executable..."
-            # Fallback: find first executable file inside .app (Mach-O)
-            EXEC_NAME=$(cd "$APP_PATH" && find . -maxdepth 1 -type f -perm +111 -print | sed 's|^\./||' | head -n1)
+          if [ -z "${EXEC_NAME:-}" ]; then
+            echo "PlistBuddy failed, fallback to defaults read"
+            EXEC_NAME=$(defaults read "$APP_PATH/Info.plist" CFBundleExecutable 2>/dev/null || true)
           fi
 
-          if [ -z "$EXEC_NAME" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
-            echo "::error::Executable not found inside app bundle."
-            ls -la "signed/$APP_NAME" || true
+          if [ -z "${EXEC_NAME:-}" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
+            echo "CFBundleExecutable missing or not found; searching for Mach-O in app bundle..."
+            CANDIDATE=$(find "signed/$APP_NAME" -maxdepth 1 -type f -print0 | xargs -0 file | grep 'Mach-O' | head -n1 | cut -d: -f1 | xargs -I{} basename "{}" || true)
+            if [ -n "${CANDIDATE:-}" ] && [ -f "signed/$APP_NAME/$CANDIDATE" ]; then
+              EXEC_NAME="$CANDIDATE"
+            fi
+          fi
+
+          echo "App content (top-level):"
+          ls -la "signed/$APP_NAME" || true
+          echo "Resolved EXEC_NAME: ${EXEC_NAME:-<empty>}"
+
+          if [ -z "${EXEC_NAME:-}" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
+            echo "::error::Executable not found inside app bundle after detection."
             exit 1
           fi
 
+          chmod +x "signed/$APP_NAME/$EXEC_NAME"
+
+          echo "Write entitlements and sign"
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -91,12 +107,11 @@ jobs:
           </plist>
           PLIST
 
-          echo "Signing executable: $EXEC_NAME"
           ldid -Ssigned/entitlements.plist "signed/$APP_NAME/$EXEC_NAME"
 
-      - name: Package IPA
+      - name: Package IPA (clean Payload then zip)
         run: |
-          set -e
+          set -euo pipefail
           APP_PATH="${{ steps.verify.outputs.APP_PATH }}"
           APP_NAME=$(basename "$APP_PATH")
           rm -rf Payload
