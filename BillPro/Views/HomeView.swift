@@ -8,8 +8,8 @@ struct HomeView: View {
             phone: "0900000000",
             deliveryDate: Date(),
             items: [
-                Item(name: "Áo thun", unitPrice: 120000, quantity: 2),
-                Item(name: "Quần jean", unitPrice: 350000, quantity: 1)
+                Item(name: "Áo thun", unitPrice: 120_000, quantity: 2),
+                Item(name: "Quần jean", unitPrice: 350_000, quantity: 1)
             ]
         )
     ]

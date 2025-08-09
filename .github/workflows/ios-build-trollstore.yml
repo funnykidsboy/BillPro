@@ -59,248 +59,38 @@ jobs:
       - name: Ad-hoc sign with ldid (auto-detect executable, robust)
         run: |
           set -euo pipefail
-          APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
-          APP_NAME=$(basename "$APP_PATH")
-
-          rm -rf "signed/$APP_NAME"
-          mkdir -p signed
-          cp -R "$APP_PATH" "signed/$APP_NAME"
-
-          # Đọc CFBundleExecutable từ Info.plist đã build (binary plist OK)
-          EXEC_NAME=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$APP_PATH/Info.plist" 2>/dev/null || true)
-          # Fallback nếu rỗng hoặc là $(...)
-          if [ -z "${EXEC_NAME:-}" ] || echo "$EXEC_NAME" | grep -q '^\$\('; then
-            EXEC_NAME="BillPro"
-          fi
-
-          # Tìm Mach-O nếu vẫn không có
-          if [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
-            CANDIDATE=$(find "signed/$APP_NAME" -maxdepth 1 -type f -print0 | xargs -0 file | grep 'Mach-O' | head -n1 | cut -d: -f1 | xargs -I{} basename "{}" || true)
-            if [ -n "${CANDIDATE:-}" ] && [ -f "signed/$APP_NAME/$CANDIDATE" ]; then
-              EXEC_NAME="$CANDIDATE"
-            fi
-          fi
-
-          echo "Resolved EXEC_NAME: ${EXEC_NAME:-<empty>}"
-          test -f "signed/$APP_NAME/$EXEC_NAME" || { echo "::error::Executable not found"; ls -la "signed/$APP_NAME"; exit 1; }
-
-          chmod +x "signed/$APP_NAME/$EXEC_NAME"
-          cat > signed/entitlements.plist <<'PLIST'
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0"><dict>
-            <key>application-identifier</key><string>com.example.BillPro</string>
-            <key>get-task-allow</key><true/>
-            <key>keychain-access-groups</key><array><string>com.example.BillPro</string></array>
-          </dict></plist>
-          PLIST
-          ldid -Ssigned/entitlements.plist "signed/$APP_NAME/$EXEC_NAME"
-name: Build iOS 15 IPA (TrollStore)
-
-on:
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: macos-14
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Remove old .xcodeproj if exists
-        run: rm -rf BillPro.xcodeproj
-
-      - name: Install tools (Mint + ldid)
-        run: |
-          brew update
-          brew install mint ldid
-
-      - name: Generate Xcode project with XcodeGen 2.43.0 (via Mint)
-        run: |
-          mint run yonaskolb/XcodeGen@2.43.0 xcodegen generate
-
-      - name: Force downgrade project format to Xcode 15 (fallback)
-        run: |
-          PBX=BillPro.xcodeproj/project.pbxproj
-          test -f "$PBX" || { echo "missing $PBX"; exit 1; }
-          /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
-          /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
-          grep -m1 'objectVersion' "$PBX" || true
-          grep -m1 'compatibilityVersion' "$PBX" || true
-
-      - name: Build .app (no signing) with fixed derivedDataPath
-        run: |
-          set -x
-          rm -rf build
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro             -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             -derivedDataPath build             build 2>&1 | tee build.log
-
-      - name: Upload build log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
-
-      - name: Verify built app exists
-        id: verify
-        run: |
-          APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
-          echo "APP_PATH=$APP_PATH"
-          if [ ! -d "$APP_PATH" ]; then
-            echo "::error::App not found. Listing any .app found:"
-            find build -name "*.app" -maxdepth 5 || true
-            exit 1
-          fi
-          test -f "$APP_PATH/Info.plist" || { echo "::error::Info.plist missing in app bundle"; exit 1; }
-          echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
-
-      - name: Ad-hoc sign with ldid (auto-detect executable, robust)
-        run: |
-          set -euo pipefail
-          APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
-          APP_NAME=$(basename "$APP_PATH")
-
-          rm -rf "signed/$APP_NAME"
-          mkdir -p signed
-          cp -R "$APP_PATH" "signed/$APP_NAME"
-
-          # Đọc CFBundleExecutable từ Info.plist đã build (binary plist OK)
-          EXEC_NAME=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$APP_PATH/Info.plist" 2>/dev/null || true)
-          # Fallback nếu rỗng hoặc là $(...)
-          if [ -z "${EXEC_NAME:-}" ] || echo "$EXEC_NAME" | grep -q '^\$\('; then
-            EXEC_NAME="BillPro"
-          fi
-
-          # Tìm Mach-O nếu vẫn không có
-          if [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
-            CANDIDATE=$(find "signed/$APP_NAME" -maxdepth 1 -type f -print0 | xargs -0 file | grep 'Mach-O' | head -n1 | cut -d: -f1 | xargs -I{} basename "{}" || true)
-            if [ -n "${CANDIDATE:-}" ] && [ -f "signed/$APP_NAME/$CANDIDATE" ]; then
-              EXEC_NAME="$CANDIDATE"
-            fi
-          fi
-
-          echo "Resolved EXEC_NAME: ${EXEC_NAME:-<empty>}"
-          test -f "signed/$APP_NAME/$EXEC_NAME" || { echo "::error::Executable not found"; ls -la "signed/$APP_NAME"; exit 1; }
-
-          chmod +x "signed/$APP_NAME/$EXEC_NAME"
-          cat > signed/entitlements.plist <<'PLIST'
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0"><dict>
-            <key>application-identifier</key><string>com.example.BillPro</string>
-            <key>get-task-allow</key><true/>
-            <key>keychain-access-groups</key><array><string>com.example.BillPro</string></array>
-          </dict></plist>
-          PLIST
-          ldid -Ssigned/entitlements.plist "signed/$APP_NAME/$EXEC_NAME"
-name: Build iOS 15 IPA (TrollStore)
-
-on:
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: macos-14
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Remove old .xcodeproj if exists
-        run: rm -rf BillPro.xcodeproj
-
-      - name: Install tools (Mint + ldid)
-        run: |
-          brew update
-          brew install mint ldid
-
-      - name: Generate Xcode project with XcodeGen 2.43.0 (via Mint)
-        run: |
-          mint run yonaskolb/XcodeGen@2.43.0 xcodegen generate
-
-      - name: Force downgrade project format to Xcode 15 (fallback)
-        run: |
-          PBX=BillPro.xcodeproj/project.pbxproj
-          test -f "$PBX" || { echo "missing $PBX"; exit 1; }
-          /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
-          /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
-          grep -m1 'objectVersion' "$PBX" || true
-          grep -m1 'compatibilityVersion' "$PBX" || true
-
-      - name: Build .app (no signing) with fixed derivedDataPath
-        run: |
-          set -x
-          rm -rf build
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro             -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             -derivedDataPath build             build 2>&1 | tee build.log
-
-      - name: Upload build log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
-
-      - name: Verify built app exists
-        id: verify
-        run: |
-          APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
-          echo "APP_PATH=$APP_PATH"
-          if [ ! -d "$APP_PATH" ]; then
-            echo "::error::App not found. Listing any .app found:"
-            find build -name "*.app" -maxdepth 5 || true
-            exit 1
-          fi
-          test -f "$APP_PATH/Info.plist" || { echo "::error::Info.plist missing in app bundle"; exit 1; }
-          echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
-
-      - name: Ad-hoc sign with ldid (auto-detect executable, robust)
-        run: |
-          set -euo pipefail
           APP_PATH="${{ steps.verify.outputs.APP_PATH }}"
           APP_NAME=$(basename "$APP_PATH")
 
-          echo "Copy app to signed/"
           rm -rf "signed/$APP_NAME"
           mkdir -p signed
           cp -R "$APP_PATH" "signed/$APP_NAME"
 
-          echo "Detect CFBundleExecutable via PlistBuddy"
           EXEC_NAME=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$APP_PATH/Info.plist" 2>/dev/null || true)
-
-          if [ -z "${EXEC_NAME:-}" ]; then
-            echo "PlistBuddy failed, fallback to defaults read"
-            EXEC_NAME=$(defaults read "$APP_PATH/Info.plist" CFBundleExecutable 2>/dev/null || true)
+          if [ -z "${EXEC_NAME:-}" ] || echo "$EXEC_NAME" | grep -q '^\$\('; then
+            EXEC_NAME="BillPro"
           fi
 
-          if [ -z "${EXEC_NAME:-}" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
-            echo "CFBundleExecutable missing or not found; searching for Mach-O in app bundle..."
+          if [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
             CANDIDATE=$(find "signed/$APP_NAME" -maxdepth 1 -type f -print0 | xargs -0 file | grep 'Mach-O' | head -n1 | cut -d: -f1 | xargs -I{} basename "{}" || true)
             if [ -n "${CANDIDATE:-}" ] && [ -f "signed/$APP_NAME/$CANDIDATE" ]; then
               EXEC_NAME="$CANDIDATE"
             fi
           fi
 
-          echo "App content (top-level):"
-          ls -la "signed/$APP_NAME" || true
           echo "Resolved EXEC_NAME: ${EXEC_NAME:-<empty>}"
-
-          if [ -z "${EXEC_NAME:-}" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
-            echo "::error::Executable not found inside app bundle after detection."
-            exit 1
-          fi
+          test -f "signed/$APP_NAME/$EXEC_NAME" || { echo "::error::Executable not found"; ls -la "signed/$APP_NAME"; exit 1; }
 
           chmod +x "signed/$APP_NAME/$EXEC_NAME"
-
-          echo "Write entitlements and sign"
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
+          <plist version="1.0"><dict>
             <key>application-identifier</key><string>com.example.BillPro</string>
             <key>get-task-allow</key><true/>
             <key>keychain-access-groups</key><array><string>com.example.BillPro</string></array>
-          </dict>
-          </plist>
+          </dict></plist>
           PLIST
-
           ldid -Ssigned/entitlements.plist "signed/$APP_NAME/$EXEC_NAME"
 
       - name: Package IPA (clean Payload then zip)
