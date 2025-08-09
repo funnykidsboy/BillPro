@@ -9,33 +9,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Xóa project cũ nếu có (tránh xung đột format)
       - name: Remove old .xcodeproj if exists
         run: rm -rf BillPro.xcodeproj
 
-      # Cài XcodeGen 2.43.0 (pin version, tránh format 77 của Xcode 16)
-      - name: Install XcodeGen 2.43.0 + ldid
+      - name: Install tools (Mint + ldid)
         run: |
-          brew install ldid
-          curl -L -o xcodegen.zip https://github.com/yonaskolb/XcodeGen/releases/download/2.43.0/xcodegen-2.43.0.zip
-          unzip -q xcodegen.zip
-          sudo mv xcodegen /usr/local/bin/xcodegen
-          xcodegen version
+          brew update
+          brew install mint ldid
 
-      - name: Generate Xcode project
-        run: xcodegen generate
+      - name: Generate Xcode project with XcodeGen 2.43.0 (via Mint)
+        run: |
+          mint run yonaskolb/XcodeGen@2.43.0 xcodegen version
+          mint run yonaskolb/XcodeGen@2.43.0 xcodegen generate
 
-      # Fallback: nếu vì lý do nào đó objectVersion vẫn > 75 thì hạ về 75 + compat 15.0
-      - name: Force downgrade project format to Xcode 15
+      - name: Force downgrade project format to Xcode 15 (fallback)
         run: |
           PBX=BillPro.xcodeproj/project.pbxproj
           test -f "$PBX" || { echo "missing $PBX"; exit 1; }
           /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
-          /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
-          echo "---- objectVersion ----"
-          grep -m1 'objectVersion' "$PBX" || true
-          echo "---- compatibilityVersion ----"
-          grep -m1 'compatibilityVersion' "$PBX" || true
+          /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
+          echo "---- objectVersion ----"; grep -m1 'objectVersion' "$PBX" || true
+          echo "---- compatibilityVersion ----"; grep -m1 'compatibilityVersion' "$PBX" || true
 
       - name: Build .app (no signing, print logs)
         run: |
