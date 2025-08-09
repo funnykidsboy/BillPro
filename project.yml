@@ -1,0 +1,16 @@
+name: BillPro
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  BillPro:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: BillPro
+    info:
+      path: BillPro/Info.plist
+    scheme:
+      testTargets: []

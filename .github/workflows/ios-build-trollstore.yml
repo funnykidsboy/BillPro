@@ -1,0 +1,26 @@
+name: Build iOS 15 IPA (TrollStore)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: brew install xcodegen ldid
+      - name: Generate Xcode project
+        run: xcodegen generate
+      - name: Build .app
+        run: |
+          xcodebuild -scheme BillPro             -configuration Release             -sdk iphoneos             -destination 'generic/platform=iOS'             -archivePath build/BillPro.xcarchive archive             CODE_SIGNING_ALLOWED=NO
+      - name: Package IPA
+        run: |
+          mkdir -p Payload
+          cp -R build/BillPro.xcarchive/Products/Applications/BillPro.app Payload/
+          zip -r BillPro-iOS15.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BillPro-iOS15-IPA
+          path: BillPro-iOS15.ipa
