@@ -7,19 +7,10 @@ targets:
   BillPro:
     type: application
     platform: iOS
+    deploymentTarget: "15.0"
     sources:
-      - path: BillPro/App
-      - path: BillPro/Views
-      - path: BillPro/Models
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.BillPro
-        PRODUCT_NAME: BillPro
-        INFOPLIST_FILE: BillPro/Info.plist
-        SWIFT_VERSION: 5.9
-        IPHONEOS_DEPLOYMENT_TARGET: 15.0
-        CODE_SIGN_STYLE: Manual
-        CODE_SIGNING_ALLOWED: NO
-        CODE_SIGNING_REQUIRED: NO
+      - path: BillPro
+    info:
+      path: BillPro/Info.plist
     scheme:
       testTargets: []

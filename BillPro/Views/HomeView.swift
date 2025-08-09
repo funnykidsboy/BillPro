@@ -10,16 +10,15 @@ struct HomeView: View {
             items: [
                 Item(name: "Áo thun", unitPrice: 120_000, quantity: 2),
                 Item(name: "Quần jean", unitPrice: 350_000, quantity: 1)
-            ]
+            ],
+            discountValue: 0
         )
     ]
 
-    var filtered: [Order] {
+    private var filtered: [Order] {
         let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         if q.isEmpty { return orders }
-        return orders.filter { o in
-            o.customerName.lowercased().contains(q) || o.phone.lowercased().contains(q)
-        }
+        return orders.filter { $0.customerName.lowercased().contains(q) || $0.phone.lowercased().contains(q) }
     }
 
     var body: some View {

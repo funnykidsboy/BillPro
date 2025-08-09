@@ -26,7 +26,9 @@ struct InvoiceView: View {
                     Text("Price").frame(width: 90, alignment: .trailing)
                     Text("Q").frame(width: 40, alignment: .trailing)
                     Text("Amount").frame(width: 110, alignment: .trailing)
-                }.font(.caption).foregroundColor(.secondary)
+                }
+                .font(.caption)
+                .foregroundColor(.secondary)
 
                 ForEach(Array(order.items.enumerated()), id: \.element.id) { idx, it in
                     HStack {
@@ -35,22 +37,20 @@ struct InvoiceView: View {
                         Text(currencyString(it.unitPrice)).frame(width: 90, alignment: .trailing)
                         Text("\(NSDecimalNumber(decimal: it.quantity))").frame(width: 40, alignment: .trailing)
                         Text(currencyString(it.amount)).frame(width: 110, alignment: .trailing)
-                    }.font(.callout)
+                    }
+                    .font(.callout)
                 }
 
                 HStack {
-                    Text("Total Quantity")
-                    Spacer()
+                    Text("Total Quantity"); Spacer()
                     Text("\(NSDecimalNumber(decimal: order.totalQuantity))")
                 }
                 HStack {
-                    Text("Discount")
-                    Spacer()
+                    Text("Discount"); Spacer()
                     Text(currencyString(order.discountComputed)).underline()
                 }
                 HStack {
-                    Text("Total Amount").font(.headline)
-                    Spacer()
+                    Text("Total Amount").font(.headline); Spacer()
                     Text(currencyString(order.total)).font(.headline)
                 }
             }
