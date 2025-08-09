@@ -8,38 +8,36 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
+
       - name: Install tools
         run: |
           brew update
           brew install xcodegen ldid
+
       - name: Generate Xcode project
         run: xcodegen generate
-      - name: Build .app (no signing, with logs)
+
+      - name: Build .app (no signing, print logs to console)
         run: |
           set -x
+          echo "=== Danh sách scheme/project ==="
           xcodebuild -list
-          touch build.log
-          set +e
+          echo "=== Bắt đầu build ==="
           xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            build 2>&1 | tee build.log
-          echo "BUILD_EXIT_CODE=$?" >> $GITHUB_ENV
-          set -e
-      - name: Upload build log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
+            build
+
       - name: Find built app
         id: findapp
         run: |
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "BillPro.app" -type d | head -n 1)
           echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
+
       - name: Ad-hoc sign with ldid (TrollStore)
         run: |
           mkdir -p signed
           cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
+          # Minimal entitlements for TrollStore permasigning
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -52,11 +50,13 @@ jobs:
           </plist>
           PLIST
           ldid -Ssigned/entitlements.plist signed/BillPro.app
+
       - name: Package IPA
         run: |
           mkdir -p Payload
           cp -R signed/BillPro.app Payload/
           zip -r BillPro_iOS15_TrollStore.ipa Payload
+
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
