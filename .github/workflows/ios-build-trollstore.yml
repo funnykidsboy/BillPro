@@ -30,7 +30,7 @@ jobs:
           grep -m1 'objectVersion' "$PBX" || true
           grep -m1 'compatibilityVersion' "$PBX" || true
 
-      - name: Build .app (no signing) to fixed derivedDataPath
+      - name: Build .app (no signing) with fixed derivedDataPath
         run: |
           set -x
           rm -rf build
@@ -53,13 +53,32 @@ jobs:
             find build -name "*.app" -maxdepth 5 || true
             exit 1
           fi
-          test -f "$APP_PATH/BillPro" || { echo "::error::Executable missing at $APP_PATH/BillPro"; ls -la "$APP_PATH"; exit 1; }
+          test -f "$APP_PATH/Info.plist" || { echo "::error::Info.plist missing in app bundle"; exit 1; }
           echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
 
-      - name: Ad-hoc sign with ldid (TrollStore)
+      - name: Ad-hoc sign with ldid (auto-detect executable)
         run: |
+          set -e
+          APP_PATH="${{ steps.verify.outputs.APP_PATH }}"
+          APP_NAME=$(basename "$APP_PATH")
           mkdir -p signed
-          cp -R "${{ steps.verify.outputs.APP_PATH }}" signed/BillPro.app
+          cp -R "$APP_PATH" "signed/$APP_NAME"
+
+          # Try to read CFBundleExecutable from Info.plist
+          EXEC_NAME=$(defaults read "$APP_PATH/Info.plist" CFBundleExecutable 2>/dev/null || true)
+
+          if [ -z "$EXEC_NAME" ] || [ ! -f "$APP_PATH/$EXEC_NAME" ]; then
+            echo "CFBundleExecutable not found or missing file, searching for a Mach-O executable..."
+            # Fallback: find first executable file inside .app (Mach-O)
+            EXEC_NAME=$(cd "$APP_PATH" && find . -maxdepth 1 -type f -perm +111 -print | sed 's|^\./||' | head -n1)
+          fi
+
+          if [ -z "$EXEC_NAME" ] || [ ! -f "signed/$APP_NAME/$EXEC_NAME" ]; then
+            echo "::error::Executable not found inside app bundle."
+            ls -la "signed/$APP_NAME" || true
+            exit 1
+          fi
+
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -71,13 +90,18 @@ jobs:
           </dict>
           </plist>
           PLIST
-          ldid -Ssigned/entitlements.plist signed/BillPro.app
+
+          echo "Signing executable: $EXEC_NAME"
+          ldid -Ssigned/entitlements.plist "signed/$APP_NAME/$EXEC_NAME"
 
       - name: Package IPA
         run: |
+          set -e
+          APP_PATH="${{ steps.verify.outputs.APP_PATH }}"
+          APP_NAME=$(basename "$APP_PATH")
           rm -rf Payload
           mkdir -p Payload
-          cp -R signed/BillPro.app Payload/
+          cp -R "signed/$APP_NAME" Payload/
           zip -r BillPro_iOS15_TrollStore.ipa Payload
 
       - name: Upload IPA
