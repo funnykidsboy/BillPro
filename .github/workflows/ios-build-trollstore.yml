@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Remove old .xcodeproj if exists
+        run: |
+          echo "Removing old .xcodeproj if exists..."
+          rm -rf BillPro.xcodeproj
+
       - name: Install tools
         run: |
           brew update
