@@ -1,7 +1,6 @@
 name: Build iOS 15 IPA (TrollStore)
 
-on:
-  workflow_dispatch:
+on: { workflow_dispatch: {} }
 
 jobs:
   build:
@@ -19,32 +18,23 @@ jobs:
 
       - name: Generate Xcode project with XcodeGen 2.43.0 (via Mint)
         run: |
-          mint run yonaskolb/XcodeGen@2.43.0 xcodegen version
           mint run yonaskolb/XcodeGen@2.43.0 xcodegen generate
 
       - name: Force downgrade project format to Xcode 15 (fallback)
         run: |
           PBX=BillPro.xcodeproj/project.pbxproj
-          test -f "$PBX" || { echo "missing $PBX"; exit 1; }
           /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
           /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
-          echo "---- objectVersion ----"; grep -m1 'objectVersion' "$PBX" || true
-          echo "---- compatibilityVersion ----"; grep -m1 'compatibilityVersion' "$PBX" || true
 
       - name: Build .app (no signing, save & print logs)
         run: |
           set -x
-          touch build.log
-          echo "=== xcodebuild -list ===" | tee -a build.log
-          xcodebuild -list -project BillPro.xcodeproj 2>&1 | tee -a build.log
-          echo "=== SHOW BUILD SETTINGS ===" | tee -a build.log
-          xcodebuild -showBuildSettings -project BillPro.xcodeproj -scheme BillPro 2>&1 | tee -a build.log || true
-          echo "=== START BUILD ===" | tee -a build.log
-          set +e
-          set -o pipefail
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             build 2>&1 | tee -a build.log
-          echo "BUILD_EXIT_CODE=$?" | tee -a build.log
-          set -e
+          rm -rf build
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
+            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            -derivedDataPath build \
+            build 2>&1 | tee build.log
+        shell: bash
 
       - name: Upload build log
         if: always()
@@ -53,17 +43,22 @@ jobs:
           name: build-log
           path: build.log
 
-      - name: Find built app
-        id: findapp
+      - name: Verify .app exists and has executable
+        id: verify
         run: |
-          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "BillPro.app" -type d | head -n 1)
+          APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
           echo "APP_PATH=$APP_PATH"
+          test -d "$APP_PATH" || { echo "::error::App not found at $APP_PATH"; exit 1; }
+          ls -la "$APP_PATH"
+          EXE="$APP_PATH/BillPro"
+          test -f "$EXE" || { echo "::error::Executable not found at $EXE"; exit 1; }
+          file "$EXE" || true
           echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
 
       - name: Ad-hoc sign with ldid (TrollStore)
         run: |
           mkdir -p signed
-          cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
+          cp -R "${{ steps.verify.outputs.APP_PATH }}" signed/BillPro.app
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
