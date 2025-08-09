@@ -4,7 +4,8 @@ import SwiftUI
 struct BillProApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            Text("Hello iOS 15")
+                .padding()
         }
     }
 }
