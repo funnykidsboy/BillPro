@@ -2,15 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                Image(systemName: "doc.text.magnifyingglass").font(.system(size: 54))
-                Text("BillPro — iOS 15 Minimal").font(.headline)
-                Text("Build OK · TrollStore IPA").foregroundColor(.secondary)
-            }
-            .padding()
-            .navigationTitle("BillPro")
+        VStack(spacing: 16) {
+            Image(systemName: "shippingbox").font(.system(size: 56))
+            Text("BillPro Minimal")
+                .font(.headline)
+            Text("iOS 15 • TrollStore IPA")
+                .foregroundColor(.secondary)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .padding()
     }
 }

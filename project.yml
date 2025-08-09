@@ -13,6 +13,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.BillPro
+        PRODUCT_NAME: BillPro
         INFOPLIST_FILE: BillPro/Info.plist
         SWIFT_VERSION: 5.9
         IPHONEOS_DEPLOYMENT_TARGET: 15.0

@@ -1,6 +1,7 @@
 name: Build iOS 15 IPA (TrollStore)
 
-on: { workflow_dispatch: {} }
+on:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,18 +24,17 @@ jobs:
       - name: Force downgrade project format to Xcode 15 (fallback)
         run: |
           PBX=BillPro.xcodeproj/project.pbxproj
+          test -f "$PBX" || { echo "missing $PBX"; exit 1; }
           /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
           /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
+          grep -m1 'objectVersion' "$PBX" || true
+          grep -m1 'compatibilityVersion' "$PBX" || true
 
-      - name: Build .app (no signing, save & print logs)
+      - name: Build .app (no signing) to fixed derivedDataPath
         run: |
           set -x
           rm -rf build
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
-            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            -derivedDataPath build \
-            build 2>&1 | tee build.log
-        shell: bash
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro             -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             -derivedDataPath build             build 2>&1 | tee build.log
 
       - name: Upload build log
         if: always()
@@ -43,16 +43,17 @@ jobs:
           name: build-log
           path: build.log
 
-      - name: Verify .app exists and has executable
+      - name: Verify built app exists
         id: verify
         run: |
           APP_PATH="build/Build/Products/Release-iphoneos/BillPro.app"
           echo "APP_PATH=$APP_PATH"
-          test -d "$APP_PATH" || { echo "::error::App not found at $APP_PATH"; exit 1; }
-          ls -la "$APP_PATH"
-          EXE="$APP_PATH/BillPro"
-          test -f "$EXE" || { echo "::error::Executable not found at $EXE"; exit 1; }
-          file "$EXE" || true
+          if [ ! -d "$APP_PATH" ]; then
+            echo "::error::App not found. Listing any .app found:"
+            find build -name "*.app" -maxdepth 5 || true
+            exit 1
+          fi
+          test -f "$APP_PATH/BillPro" || { echo "::error::Executable missing at $APP_PATH/BillPro"; ls -la "$APP_PATH"; exit 1; }
           echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
 
       - name: Ad-hoc sign with ldid (TrollStore)
