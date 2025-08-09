@@ -42,9 +42,7 @@ jobs:
           echo "=== START BUILD ===" | tee -a build.log
           set +e
           set -o pipefail
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
-            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            build 2>&1 | tee -a build.log
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             build 2>&1 | tee -a build.log
           echo "BUILD_EXIT_CODE=$?" | tee -a build.log
           set -e
 

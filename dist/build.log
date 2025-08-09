@@ -1,0 +1,833 @@
+=== xcodebuild -list ===
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -list -project BillPro.xcodeproj
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Information about project "BillPro":
+    Targets:
+        BillPro
+
+    Build Configurations:
+        Debug
+        Release
+
+    If no build configuration is specified and -scheme is not passed then "Debug" is used.
+
+    Schemes:
+        BillPro
+
+=== SHOW BUILD SETTINGS ===
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -showBuildSettings -project BillPro.xcodeproj -scheme BillPro
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings for action build and target BillPro:
+    ACTION = build
+    AD_HOC_CODE_SIGNING_ALLOWED = NO
+    AGGREGATE_TRACKED_DOMAINS = YES
+    ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO
+    ALTERNATE_GROUP = staff
+    ALTERNATE_MODE = u+w,go-w,a+rX
+    ALTERNATE_OWNER = runner
+    ALTERNATIVE_DISTRIBUTION_WEB = NO
+    ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+    ALWAYS_SEARCH_USER_PATHS = NO
+    ALWAYS_USE_SEPARATE_HEADERMAPS = NO
+    APPLE_INTERNAL_DEVELOPER_DIR = /AppleInternal/Developer
+    APPLE_INTERNAL_DIR = /AppleInternal
+    APPLE_INTERNAL_DOCUMENTATION_DIR = /AppleInternal/Documentation
+    APPLE_INTERNAL_LIBRARY_DIR = /AppleInternal/Library
+    APPLE_INTERNAL_TOOLS = /AppleInternal/Developer/Tools
+    APPLICATION_EXTENSION_API_ONLY = NO
+    APPLY_RULES_IN_COPY_FILES = NO
+    APPLY_RULES_IN_COPY_HEADERS = NO
+    APP_SHORTCUTS_ENABLE_FLEXIBLE_MATCHING = YES
+    ARCHS = arm64
+    ARCHS_STANDARD = arm64
+    ARCHS_STANDARD_32_64_BIT = armv7 arm64
+    ARCHS_STANDARD_32_BIT = armv7
+    ARCHS_STANDARD_64_BIT = arm64
+    ARCHS_STANDARD_INCLUDING_64_BIT = arm64
+    ARCHS_UNIVERSAL_IPHONE_OS = armv7 arm64
+    ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+    AUTOMATICALLY_MERGE_DEPENDENCIES = NO
+    AVAILABLE_PLATFORMS = appletvos appletvsimulator driverkit iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator
+    BITCODE_GENERATION_MODE = marker
+    BUILD_ACTIVE_RESOURCES_ONLY = NO
+    BUILD_COMPONENTS = headers build
+    BUILD_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products
+    BUILD_LIBRARY_FOR_DISTRIBUTION = NO
+    BUILD_ROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products
+    BUILD_STYLE = 
+    BUILD_VARIANTS = normal
+    BUILT_PRODUCTS_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos
+    BUNDLE_CONTENTS_FOLDER_PATH_deep = Contents/
+    BUNDLE_EXECUTABLE_FOLDER_NAME_deep = MacOS
+    BUNDLE_EXTENSIONS_FOLDER_PATH = Extensions
+    BUNDLE_FORMAT = shallow
+    BUNDLE_FRAMEWORKS_FOLDER_PATH = Frameworks
+    BUNDLE_PLUGINS_FOLDER_PATH = PlugIns
+    BUNDLE_PRIVATE_HEADERS_FOLDER_PATH = PrivateHeaders
+    BUNDLE_PUBLIC_HEADERS_FOLDER_PATH = Headers
+    CACHE_ROOT = /var/folders/y6/nj790rtn62lfktb1sh__79hc0000gn/C/com.apple.DeveloperTools/15.4-15F31d/Xcode
+    CCHROOT = /var/folders/y6/nj790rtn62lfktb1sh__79hc0000gn/C/com.apple.DeveloperTools/15.4-15F31d/Xcode
+    CHMOD = /bin/chmod
+    CHOWN = /usr/sbin/chown
+    CLANG_ANALYZER_NONNULL = YES
+    CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE
+    CLANG_CXX_LANGUAGE_STANDARD = gnu++14
+    CLANG_CXX_LIBRARY = libc++
+    CLANG_ENABLE_EXPLICIT_MODULES = NO
+    CLANG_ENABLE_MODULES = YES
+    CLANG_ENABLE_OBJC_ARC = YES
+    CLANG_ENABLE_OBJC_WEAK = YES
+    CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES
+    CLANG_WARN_BOOL_CONVERSION = YES
+    CLANG_WARN_COMMA = YES
+    CLANG_WARN_CONSTANT_CONVERSION = YES
+    CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
+    CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR
+    CLANG_WARN_DOCUMENTATION_COMMENTS = YES
+    CLANG_WARN_EMPTY_BODY = YES
+    CLANG_WARN_ENUM_CONVERSION = YES
+    CLANG_WARN_INFINITE_RECURSION = YES
+    CLANG_WARN_INT_CONVERSION = YES
+    CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES
+    CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES
+    CLANG_WARN_OBJC_LITERAL_CONVERSION = YES
+    CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR
+    CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES
+    CLANG_WARN_RANGE_LOOP_ANALYSIS = YES
+    CLANG_WARN_STRICT_PROTOTYPES = YES
+    CLANG_WARN_SUSPICIOUS_MOVE = YES
+    CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE
+    CLANG_WARN_UNREACHABLE_CODE = YES
+    CLANG_WARN__DUPLICATE_METHOD_MATCH = YES
+    CLASS_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/JavaClasses
+    CLEAN_PRECOMPS = YES
+    CLONE_HEADERS = NO
+    CODESIGNING_FOLDER_PATH = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos/BillPro.app
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    CODE_SIGN_CONTEXT_CLASS = XCiPhoneOSCodeSignContext
+    CODE_SIGN_IDENTITY = iPhone Developer
+    CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES
+    CODE_SIGN_STYLE = Manual
+    COLOR_DIAGNOSTICS = NO
+    COMBINE_HIDPI_IMAGES = NO
+    COMPILER_INDEX_STORE_ENABLE = Default
+    COMPOSITE_SDK_DIRS = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/CompositeSDKs
+    COMPRESS_PNG_FILES = YES
+    CONFIGURATION = Debug
+    CONFIGURATION_BUILD_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos
+    CONFIGURATION_TEMP_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos
+    CONTENTS_FOLDER_PATH = BillPro.app
+    CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_NO = BillPro.app/Contents
+    CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_YES = BillPro.app
+    COPYING_PRESERVES_HFS_DATA = NO
+    COPY_HEADERS_RUN_UNIFDEF = NO
+    COPY_PHASE_STRIP = NO
+    CORRESPONDING_SIMULATOR_PLATFORM_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform
+    CORRESPONDING_SIMULATOR_PLATFORM_NAME = iphonesimulator
+    CORRESPONDING_SIMULATOR_SDK_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.5.sdk
+    CORRESPONDING_SIMULATOR_SDK_NAME = iphonesimulator17.5
+    CP = /bin/cp
+    CREATE_INFOPLIST_SECTION_IN_BINARY = NO
+    CURRENT_ARCH = arm64
+    CURRENT_VARIANT = normal
+    DEAD_CODE_STRIPPING = YES
+    DEBUGGING_SYMBOLS = YES
+    DEBUG_INFORMATION_FORMAT = dwarf
+    DEFAULT_COMPILER = com.apple.compilers.llvm.clang.1_0
+    DEFAULT_DEXT_INSTALL_PATH = /System/Library/DriverExtensions
+    DEFAULT_KEXT_INSTALL_PATH = /System/Library/Extensions
+    DEFINES_MODULE = NO
+    DEPLOYMENT_LOCATION = NO
+    DEPLOYMENT_POSTPROCESSING = NO
+    DEPLOYMENT_TARGET_SETTING_NAME = IPHONEOS_DEPLOYMENT_TARGET
+    DEPLOYMENT_TARGET_SUGGESTED_VALUES = 12.0 12.1 12.2 12.3 12.4 13.0 13.1 13.2 13.3 13.4 13.5 13.6 14.0 14.1 14.2 14.3 14.4 14.5 14.6 14.7 15.0 15.1 15.2 15.3 15.4 15.5 15.6 16.0 16.1 16.2 16.3 16.4 16.5 16.6 17.0 17.1 17.2 17.3 17.4 17.5
+    DERIVED_FILES_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/DerivedSources
+    DERIVED_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/DerivedSources
+    DERIVED_SOURCES_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/DerivedSources
+    DEVELOPER_APPLICATIONS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications
+    DEVELOPER_BIN_DIR = /Applications/Xcode_15.4.app/Contents/Developer/usr/bin
+    DEVELOPER_DIR = /Applications/Xcode_15.4.app/Contents/Developer
+    DEVELOPER_FRAMEWORKS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Library/Frameworks
+    DEVELOPER_FRAMEWORKS_DIR_QUOTED = /Applications/Xcode_15.4.app/Contents/Developer/Library/Frameworks
+    DEVELOPER_LIBRARY_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Library
+    DEVELOPER_SDK_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+    DEVELOPER_TOOLS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Tools
+    DEVELOPER_USR_DIR = /Applications/Xcode_15.4.app/Contents/Developer/usr
+    DEVELOPMENT_LANGUAGE = en
+    DIFF = /usr/bin/diff
+    DOCUMENTATION_FOLDER_PATH = BillPro.app/en.lproj/Documentation
+    DONT_GENERATE_INFOPLIST_FILE = NO
+    DO_HEADER_SCANNING_IN_JAM = NO
+    DSTROOT = /tmp/BillPro.dst
+    DT_TOOLCHAIN_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    DWARF_DSYM_FILE_NAME = BillPro.app.dSYM
+    DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT = NO
+    DWARF_DSYM_FOLDER_PATH = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos
+    EAGER_LINKING = NO
+    EFFECTIVE_PLATFORM_NAME = -iphoneos
+    EMBEDDED_CONTENT_CONTAINS_SWIFT = NO
+    EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO
+    ENABLE_APP_SANDBOX = NO
+    ENABLE_BITCODE = NO
+    ENABLE_CODE_COVERAGE = YES
+    ENABLE_DEFAULT_HEADER_SEARCH_PATHS = YES
+    ENABLE_DEFAULT_SEARCH_PATHS = YES
+    ENABLE_HARDENED_RUNTIME = NO
+    ENABLE_HEADER_DEPENDENCIES = YES
+    ENABLE_ON_DEMAND_RESOURCES = YES
+    ENABLE_STRICT_OBJC_MSGSEND = YES
+    ENABLE_TESTABILITY = YES
+    ENABLE_TESTING_SEARCH_PATHS = NO
+    ENABLE_USER_SCRIPT_SANDBOXING = NO
+    ENTITLEMENTS_ALLOWED = YES
+    ENTITLEMENTS_DESTINATION = Signature
+    ENTITLEMENTS_REQUIRED = NO
+    EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS = .DS_Store .svn .git .hg CVS
+    EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = *.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj
+    EXECUTABLES_FOLDER_PATH = BillPro.app/Executables
+    EXECUTABLE_FOLDER_PATH = BillPro.app
+    EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_NO = BillPro.app/MacOS
+    EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_YES = BillPro.app
+    EXECUTABLE_NAME = BillPro
+    EXECUTABLE_PATH = BillPro.app/BillPro
+    EXPANDED_CODE_SIGN_IDENTITY = 
+    EXPANDED_CODE_SIGN_IDENTITY_NAME = 
+    EXPANDED_PROVISIONING_PROFILE = 
+    EXTENSIONS_FOLDER_PATH = BillPro.app/Extensions
+    FILE_LIST = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects/LinkFileList
+    FIXED_FILES_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/FixedFiles
+    FRAMEWORKS_FOLDER_PATH = BillPro.app/Frameworks
+    FRAMEWORK_FLAG_PREFIX = -framework
+    FRAMEWORK_VERSION = A
+    FULL_PRODUCT_NAME = BillPro.app
+    FUSE_BUILD_PHASES = YES
+    FUSE_BUILD_SCRIPT_PHASES = NO
+    GCC3_VERSION = 3.3
+    GCC_C_LANGUAGE_STANDARD = gnu11
+    GCC_DYNAMIC_NO_PIC = NO
+    GCC_INLINES_ARE_PRIVATE_EXTERN = YES
+    GCC_NO_COMMON_BLOCKS = YES
+    GCC_OPTIMIZATION_LEVEL = 0
+    GCC_PFE_FILE_C_DIALECTS = c objective-c c++ objective-c++
+    GCC_PREPROCESSOR_DEFINITIONS =  DEBUG=1
+    GCC_SYMBOLS_PRIVATE_EXTERN = NO
+    GCC_THUMB_SUPPORT = YES
+    GCC_TREAT_WARNINGS_AS_ERRORS = NO
+    GCC_VERSION = com.apple.compilers.llvm.clang.1_0
+    GCC_VERSION_IDENTIFIER = com_apple_compilers_llvm_clang_1_0
+    GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+    GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR
+    GCC_WARN_UNDECLARED_SELECTOR = YES
+    GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE
+    GCC_WARN_UNUSED_FUNCTION = YES
+    GCC_WARN_UNUSED_VARIABLE = YES
+    GENERATED_MODULEMAP_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/GeneratedModuleMaps-iphoneos
+    GENERATE_INFOPLIST_FILE = NO
+    GENERATE_INTERMEDIATE_TEXT_BASED_STUBS = YES
+    GENERATE_MASTER_OBJECT_FILE = NO
+    GENERATE_PKGINFO_FILE = YES
+    GENERATE_PROFILING_CODE = NO
+    GENERATE_TEXT_BASED_STUBS = NO
+    GID = 20
+    GROUP = staff
+    HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT = YES
+    HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES = YES
+    HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS = YES
+    HEADERMAP_INCLUDES_PROJECT_HEADERS = YES
+    HEADERMAP_USES_FRAMEWORK_PREFIX_ENTRIES = YES
+    HEADERMAP_USES_VFS = NO
+    HIDE_BITCODE_SYMBOLS = YES
+    HOME = /Users/runner
+    HOST_ARCH = arm64e
+    ICONV = /usr/bin/iconv
+    INFOPLIST_ENABLE_CFBUNDLEICONS_MERGE = YES
+    INFOPLIST_EXPAND_BUILD_SETTINGS = YES
+    INFOPLIST_FILE = BillPro/Info.plist
+    INFOPLIST_OUTPUT_FORMAT = binary
+    INFOPLIST_PATH = BillPro.app/Info.plist
+    INFOPLIST_PREPROCESS = NO
+    INFOSTRINGS_PATH = BillPro.app/en.lproj/InfoPlist.strings
+    INLINE_PRIVATE_FRAMEWORKS = NO
+    INSTALLHDRS_COPY_PHASE = NO
+    INSTALLHDRS_SCRIPT_PHASE = NO
+    INSTALL_DIR = /tmp/BillPro.dst/Applications
+    INSTALL_GROUP = staff
+    INSTALL_MODE_FLAG = u+w,go-w,a+rX
+    INSTALL_OWNER = runner
+    INSTALL_PATH = /Applications
+    INSTALL_ROOT = /tmp/BillPro.dst
+    IPHONEOS_DEPLOYMENT_TARGET = 15.0
+    JAVAC_DEFAULT_FLAGS = -J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8
+    JAVA_APP_STUB = /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+    JAVA_ARCHIVE_CLASSES = YES
+    JAVA_ARCHIVE_TYPE = JAR
+    JAVA_COMPILER = /usr/bin/javac
+    JAVA_FOLDER_PATH = BillPro.app/Java
+    JAVA_FRAMEWORK_RESOURCES_DIRS = Resources
+    JAVA_JAR_FLAGS = cv
+    JAVA_SOURCE_SUBDIR = .
+    JAVA_USE_DEPENDENCIES = YES
+    JAVA_ZIP_FLAGS = -urg
+    JIKES_DEFAULT_FLAGS = +E +OLDCSO
+    KASAN_CFLAGS_CLASSIC = -DKASAN=1 -DKASAN_CLASSIC=1 -fsanitize=address -mllvm -asan-globals-live-support -mllvm -asan-force-dynamic-shadow
+    KASAN_CFLAGS_TBI = -DKASAN=1 -DKASAN_TBI=1 -fsanitize=kernel-hwaddress -mllvm -hwasan-recover=0 -mllvm -hwasan-instrument-atomics=0 -mllvm -hwasan-instrument-stack=1 -mllvm -hwasan-generate-tags-with-calls=1 -mllvm -hwasan-instrument-with-calls=1 -mllvm -hwasan-use-short-granules=0 -mllvm -hwasan-memory-access-callback-prefix=__asan_
+    KASAN_DEFAULT_CFLAGS = -DKASAN=1 -DKASAN_CLASSIC=1 -fsanitize=address -mllvm -asan-globals-live-support -mllvm -asan-force-dynamic-shadow
+    KEEP_PRIVATE_EXTERNS = NO
+    LD_DEPENDENCY_INFO_FILE = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_dependency_info.dat
+    LD_EXPORT_SYMBOLS = YES
+    LD_GENERATE_MAP_FILE = NO
+    LD_MAP_FILE_PATH = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/BillPro-LinkMap-normal-arm64.txt
+    LD_NO_PIE = NO
+    LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES
+    LD_RUNPATH_SEARCH_PATHS =  @executable_path/Frameworks
+    LD_RUNPATH_SEARCH_PATHS_YES = @loader_path/../Frameworks
+    LEGACY_DEVELOPER_DIR = /Applications/Xcode_15.4.app/Contents/Frameworks/Xcode3Core.framework/SharedSupport/Developer
+    LEX = lex
+    LIBRARY_DEXT_INSTALL_PATH = /Library/DriverExtensions
+    LIBRARY_FLAG_NOSPACE = YES
+    LIBRARY_FLAG_PREFIX = -l
+    LIBRARY_KEXT_INSTALL_PATH = /Library/Extensions
+    LINKER_DISPLAYS_MANGLED_NAMES = NO
+    LINK_FILE_LIST_normal_arm64 = 
+    LINK_WITH_STANDARD_LIBRARIES = YES
+    LLVM_TARGET_TRIPLE_OS_VERSION = ios15.0
+    LLVM_TARGET_TRIPLE_VENDOR = apple
+    LOCALIZABLE_CONTENT_DIR = 
+    LOCALIZATION_EXPORT_SUPPORTED = YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS = NO
+    LOCALIZED_RESOURCES_FOLDER_PATH = BillPro.app/en.lproj
+    LOCALIZED_STRING_MACRO_NAMES = NSLocalizedString CFCopyLocalizedString
+    LOCALIZED_STRING_SWIFTUI_SUPPORT = YES
+    LOCAL_ADMIN_APPS_DIR = /Applications/Utilities
+    LOCAL_APPS_DIR = /Applications
+    LOCAL_DEVELOPER_DIR = /Library/Developer
+    LOCAL_LIBRARY_DIR = /Library
+    LOCROOT = 
+    LOCSYMROOT = 
+    MACH_O_TYPE = mh_execute
+    MAC_OS_X_PRODUCT_BUILD_VERSION = 23H626
+    MAC_OS_X_VERSION_ACTUAL = 140706
+    MAC_OS_X_VERSION_MAJOR = 140000
+    MAC_OS_X_VERSION_MINOR = 140700
+    MAKE_MERGEABLE = NO
+    MERGEABLE_LIBRARY = NO
+    MERGED_BINARY_TYPE = none
+    MERGE_LINKED_LIBRARIES = NO
+    METAL_LIBRARY_FILE_BASE = default
+    METAL_LIBRARY_OUTPUT_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos/BillPro.app
+    MODULES_FOLDER_PATH = BillPro.app/Modules
+    MODULE_CACHE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex
+    MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE
+    MTL_FAST_MATH = YES
+    NATIVE_ARCH = arm64e
+    NATIVE_ARCH_32_BIT = i386
+    NATIVE_ARCH_64_BIT = arm64e
+    NATIVE_ARCH_ACTUAL = arm64e
+    NO_COMMON = YES
+    OBJECT_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects
+    OBJECT_FILE_DIR_normal = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects-normal
+    OBJROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex
+    ONLY_ACTIVE_ARCH = YES
+    OS = MACOS
+    OSAC = /usr/bin/osacompile
+    PACKAGE_TYPE = com.apple.package-type.wrapper.application
+    PASCAL_STRINGS = YES
+    PATH = /Applications/Xcode_15.4.app/Contents/Developer/usr/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:/opt/homebrew/opt/ruby@3.3/bin:/Users/runner/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/runner/.cargo/bin:/usr/local/opt/curl/bin:/usr/local/bin:/usr/local/sbin:/Users/runner/bin:/Users/runner/.yarn/bin:/Users/runner/Library/Android/sdk/tools:/Users/runner/Library/Android/sdk/platform-tools:/Library/Frameworks/Python.framework/Versions/Current/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/bin:/bin:/usr/sbin:/sbin:/Users/runner/.dotnet/tools
+    PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES = /usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode_15.4.app/Contents/Developer/Headers /Applications/Xcode_15.4.app/Contents/Developer/SDKs /Applications/Xcode_15.4.app/Contents/Developer/Platforms
+    PBDEVELOPMENTPLIST_PATH = BillPro.app/pbdevelopment.plist
+    PKGINFO_FILE_PATH = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/PkgInfo
+    PKGINFO_PATH = BillPro.app/PkgInfo
+    PLATFORM_DEVELOPER_APPLICATIONS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications
+    PLATFORM_DEVELOPER_BIN_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+    PLATFORM_DEVELOPER_LIBRARY_DIR = /Applications/Xcode_15.4.app/Contents/Frameworks/Xcode3Core.framework/SharedSupport/Developer/Library
+    PLATFORM_DEVELOPER_SDK_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    PLATFORM_DEVELOPER_TOOLS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools
+    PLATFORM_DEVELOPER_USR_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr
+    PLATFORM_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform
+    PLATFORM_DISPLAY_NAME = iOS
+    PLATFORM_NAME = iphoneos
+    PLATFORM_PREFERRED_ARCH = undefined_arch
+    PLATFORM_PRODUCT_BUILD_VERSION = 21F77
+    PLIST_FILE_OUTPUT_FORMAT = binary
+    PLUGINS_FOLDER_PATH = BillPro.app/PlugIns
+    PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES
+    PRECOMP_DESTINATION_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/PrefixHeaders
+    PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO
+    PRIVATE_HEADERS_FOLDER_PATH = BillPro.app/PrivateHeaders
+    PROCESSED_INFOPLIST_PATH = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects-normal/arm64/Processed-Info.plist
+    PRODUCT_BUNDLE_IDENTIFIER = com.example.BillPro
+    PRODUCT_BUNDLE_PACKAGE_TYPE = APPL
+    PRODUCT_MODULE_NAME = BillPro
+    PRODUCT_NAME = BillPro
+    PRODUCT_SETTINGS_PATH = /Users/runner/work/BillPro/BillPro/BillPro/Info.plist
+    PRODUCT_TYPE = com.apple.product-type.application
+    PROFILING_CODE = NO
+    PROJECT = BillPro
+    PROJECT_DERIVED_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/DerivedSources
+    PROJECT_DIR = /Users/runner/work/BillPro/BillPro
+    PROJECT_FILE_PATH = /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    PROJECT_NAME = BillPro
+    PROJECT_TEMP_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build
+    PROJECT_TEMP_ROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex
+    PROVISIONING_PROFILE_REQUIRED = YES
+    PROVISIONING_PROFILE_REQUIRED_YES_YES = YES
+    PROVISIONING_PROFILE_SUPPORTED = YES
+    PUBLIC_HEADERS_FOLDER_PATH = BillPro.app/Headers
+    RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS = YES
+    REMOVE_CVS_FROM_RESOURCES = YES
+    REMOVE_GIT_FROM_RESOURCES = YES
+    REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES = YES
+    REMOVE_HG_FROM_RESOURCES = YES
+    REMOVE_STATIC_EXECUTABLES_FROM_EMBEDDED_BUNDLES = YES
+    REMOVE_SVN_FROM_RESOURCES = YES
+    REZ_COLLECTOR_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/ResourceManagerResources
+    REZ_OBJECTS_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/ResourceManagerResources/Objects
+    SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO
+    SCRIPTS_FOLDER_PATH = BillPro.app/Scripts
+    SDKROOT = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+    SDK_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+    SDK_DIR_iphoneos17_5 = /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+    SDK_NAME = iphoneos17.5
+    SDK_NAMES = iphoneos17.5
+    SDK_PRODUCT_BUILD_VERSION = 21F77
+    SDK_STAT_CACHE_ENABLE = YES
+    SDK_VERSION = 17.5
+    SDK_VERSION_ACTUAL = 170500
+    SDK_VERSION_MAJOR = 170000
+    SDK_VERSION_MINOR = 170500
+    SED = /usr/bin/sed
+    SEPARATE_STRIP = NO
+    SEPARATE_SYMBOL_EDIT = NO
+    SET_DIR_MODE_OWNER_GROUP = YES
+    SET_FILE_MODE_OWNER_GROUP = NO
+    SHALLOW_BUNDLE = YES
+    SHALLOW_BUNDLE_TRIPLE = ios
+    SHALLOW_BUNDLE_ios_macabi = NO
+    SHALLOW_BUNDLE_macos = NO
+    SHARED_DERIVED_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos/DerivedSources
+    SHARED_FRAMEWORKS_FOLDER_PATH = BillPro.app/SharedFrameworks
+    SHARED_PRECOMPS_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/PrecompiledHeaders
+    SHARED_SUPPORT_FOLDER_PATH = BillPro.app/SharedSupport
+    SKIP_INSTALL = NO
+    SOURCE_ROOT = /Users/runner/work/BillPro/BillPro
+    SRCROOT = /Users/runner/work/BillPro/BillPro
+    STRINGSDATA_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build/Objects-normal/arm64
+    STRINGSDATA_ROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build
+    STRINGS_FILE_INFOPLIST_RENAME = YES
+    STRINGS_FILE_OUTPUT_ENCODING = binary
+    STRIP_BITCODE_FROM_COPIED_FILES = NO
+    STRIP_INSTALLED_PRODUCT = YES
+    STRIP_STYLE = all
+    STRIP_SWIFT_SYMBOLS = YES
+    SUPPORTED_DEVICE_FAMILIES = 1,2
+    SUPPORTED_PLATFORMS = iphonesimulator iphoneos
+    SUPPORTS_MACCATALYST = NO
+    SUPPORTS_ON_DEMAND_RESOURCES = YES
+    SUPPORTS_TEXT_BASED_API = NO
+    SUPPRESS_WARNINGS = NO
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+    SWIFT_EMIT_LOC_STRINGS = NO
+    SWIFT_OPTIMIZATION_LEVEL = -Onone
+    SWIFT_PLATFORM_TARGET_PREFIX = ios
+    SWIFT_VERSION = 5.0
+    SYMROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products
+    SYSTEM_ADMIN_APPS_DIR = /Applications/Utilities
+    SYSTEM_APPS_DIR = /Applications
+    SYSTEM_CORE_SERVICES_DIR = /System/Library/CoreServices
+    SYSTEM_DEMOS_DIR = /Applications/Extras
+    SYSTEM_DEVELOPER_APPS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications
+    SYSTEM_DEVELOPER_BIN_DIR = /Applications/Xcode_15.4.app/Contents/Developer/usr/bin
+    SYSTEM_DEVELOPER_DEMOS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications/Utilities/Built Examples
+    SYSTEM_DEVELOPER_DIR = /Applications/Xcode_15.4.app/Contents/Developer
+    SYSTEM_DEVELOPER_DOC_DIR = /Applications/Xcode_15.4.app/Contents/Developer/ADC Reference Library
+    SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications/Graphics Tools
+    SYSTEM_DEVELOPER_JAVA_TOOLS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications/Java Tools
+    SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications/Performance Tools
+    SYSTEM_DEVELOPER_RELEASENOTES_DIR = /Applications/Xcode_15.4.app/Contents/Developer/ADC Reference Library/releasenotes
+    SYSTEM_DEVELOPER_TOOLS = /Applications/Xcode_15.4.app/Contents/Developer/Tools
+    SYSTEM_DEVELOPER_TOOLS_DOC_DIR = /Applications/Xcode_15.4.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools
+    SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR = /Applications/Xcode_15.4.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools
+    SYSTEM_DEVELOPER_USR_DIR = /Applications/Xcode_15.4.app/Contents/Developer/usr
+    SYSTEM_DEVELOPER_UTILITIES_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Applications/Utilities
+    SYSTEM_DEXT_INSTALL_PATH = /System/Library/DriverExtensions
+    SYSTEM_DOCUMENTATION_DIR = /Library/Documentation
+    SYSTEM_EXTENSIONS_FOLDER_PATH = BillPro.app/SystemExtensions
+    SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_NO = BillPro.app/Library/SystemExtensions
+    SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_YES = BillPro.app/SystemExtensions
+    SYSTEM_KEXT_INSTALL_PATH = /System/Library/Extensions
+    SYSTEM_LIBRARY_DIR = /System/Library
+    TAPI_DEMANGLE = YES
+    TAPI_ENABLE_PROJECT_HEADERS = NO
+    TAPI_LANGUAGE = objective-c
+    TAPI_LANGUAGE_STANDARD = compiler-default
+    TAPI_USE_SRCROOT = YES
+    TAPI_VERIFY_MODE = Pedantic
+    TARGETED_DEVICE_FAMILY = 1,2
+    TARGETNAME = BillPro
+    TARGET_BUILD_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Debug-iphoneos
+    TARGET_NAME = BillPro
+    TARGET_TEMP_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build
+    TEMP_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build
+    TEMP_FILES_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build
+    TEMP_FILE_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Debug-iphoneos/BillPro.build
+    TEMP_ROOT = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex
+    TEST_FRAMEWORK_SEARCH_PATHS =  /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/Developer/Library/Frameworks
+    TEST_LIBRARY_SEARCH_PATHS =  /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib
+    TOOLCHAIN_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    TREAT_MISSING_BASELINES_AS_TEST_FAILURES = NO
+    UID = 501
+    UNINSTALLED_PRODUCTS_DIR = /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/UninstalledProducts
+    UNLOCALIZED_RESOURCES_FOLDER_PATH = BillPro.app
+    UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_NO = BillPro.app/Resources
+    UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_YES = BillPro.app
+    UNSTRIPPED_PRODUCT = NO
+    USER = runner
+    USER_APPS_DIR = /Users/runner/Applications
+    USER_LIBRARY_DIR = /Users/runner/Library
+    USE_DYNAMIC_NO_PIC = YES
+    USE_HEADERMAP = YES
+    USE_HEADER_SYMLINKS = NO
+    VALIDATE_PRODUCT = NO
+    VALID_ARCHS = arm64e arm64
+    VERBOSE_PBXCP = NO
+    VERSIONPLIST_PATH = BillPro.app/version.plist
+    VERSION_INFO_BUILDER = runner
+    VERSION_INFO_FILE = BillPro_vers.c
+    VERSION_INFO_STRING = "@(#)PROGRAM:BillPro  PROJECT:BillPro-"
+    WRAPPER_EXTENSION = app
+    WRAPPER_NAME = BillPro.app
+    WRAPPER_SUFFIX = .app
+    WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES = NO
+    XCODE_APP_SUPPORT_DIR = /Applications/Xcode_15.4.app/Contents/Developer/Library/Xcode
+    XCODE_PRODUCT_BUILD_VERSION = 15F31d
+    XCODE_VERSION_ACTUAL = 1540
+    XCODE_VERSION_MAJOR = 1500
+    XCODE_VERSION_MINOR = 1540
+    XPCSERVICES_FOLDER_PATH = BillPro.app/XPCServices
+    YACC = yacc
+    _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO = /Contents
+    _WRAPPER_PARENT_PATH_SHALLOW_BUNDLE_NO = /..
+    _WRAPPER_RESOURCES_DIR_SHALLOW_BUNDLE_NO = /Resources
+    __IS_NOT_MACOS = YES
+    __IS_NOT_MACOS_macosx = NO
+    __IS_NOT_SIMULATOR = YES
+    __IS_NOT_SIMULATOR_simulator = NO
+    arch = arm64
+    variant = normal
+
+=== START BUILD ===
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    IPHONEOS_DEPLOYMENT_TARGET = 15.0
+    SDKROOT = iphoneos17.5
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:0000FE00-B7D8BF07EAD829EE, name:My Mac }
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:visionOS Simulator, variant:Designed for [iPad,iPhone], id:4E013D2A-CA36-4C19-9463-47A91B25E329, OS:1.2, name:Apple Vision Pro }
+{ platform:visionOS Simulator, variant:Designed for [iPad,iPhone], id:21C1E20B-D799-439B-A428-D32957293C4C, OS:2.1, name:Apple Vision Pro }
+{ platform:visionOS Simulator, variant:Designed for [iPad,iPhone], id:25DE641E-796A-4099-9EC9-54F20400B969, OS:2.2, name:Apple Vision Pro }
+{ platform:iOS Simulator, id:1301FDBD-D6AC-458F-ABBA-E422BE186582, OS:17.0.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:1301FDBD-D6AC-458F-ABBA-E422BE186582, OS:17.0.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:6FA762E8-79DF-4174-90F3-F3B3014291E2, OS:17.2, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:6FA762E8-79DF-4174-90F3-F3B3014291E2, OS:17.2, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:925E640C-D9F0-4F95-8629-B2608C1A90E3, OS:17.4, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:925E640C-D9F0-4F95-8629-B2608C1A90E3, OS:17.4, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:D4D3361A-6D35-4ED4-83A8-205CC40E39CF, OS:17.5, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:D4D3361A-6D35-4ED4-83A8-205CC40E39CF, OS:17.5, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:63ED233A-A51F-41EA-BBB9-7C74F6FAD556, OS:18.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:63ED233A-A51F-41EA-BBB9-7C74F6FAD556, OS:18.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:911899FF-3496-47B2-9F89-02376EA4BDC6, OS:18.2, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:911899FF-3496-47B2-9F89-02376EA4BDC6, OS:18.2, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:134DF850-09C5-4255-88D5-D6030DD6A463, OS:17.0.1, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:134DF850-09C5-4255-88D5-D6030DD6A463, OS:17.0.1, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:A7E3B335-D204-4672-B592-F38D99E167FF, OS:17.2, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:A7E3B335-D204-4672-B592-F38D99E167FF, OS:17.2, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:4D7DEC6A-529B-4946-8423-C17803D9E1A3, OS:17.4, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:4D7DEC6A-529B-4946-8423-C17803D9E1A3, OS:17.4, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, id:4F4748BB-C714-4444-88B9-2ECC0202776D, OS:17.4, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:4F4748BB-C714-4444-88B9-2ECC0202776D, OS:17.4, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:B5AE4290-B2A4-4AD2-90D2-25A0702488D9, OS:17.5, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:B5AE4290-B2A4-4AD2-90D2-25A0702488D9, OS:17.5, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:A40E58D7-28CE-4F7C-98AB-5C337E7548B2, OS:18.1, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:A40E58D7-28CE-4F7C-98AB-5C337E7548B2, OS:18.1, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:2E7B30FB-0E17-4323-A9D6-D054E0E278DC, OS:18.2, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:2E7B30FB-0E17-4323-A9D6-D054E0E278DC, OS:18.2, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:241EF6EA-2AFF-4035-ACA4-BC6A9B6F50EB, OS:17.4, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:241EF6EA-2AFF-4035-ACA4-BC6A9B6F50EB, OS:17.4, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:8DBEBDEE-4E83-41AD-9B6E-8D75B2767401, OS:17.5, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:8DBEBDEE-4E83-41AD-9B6E-8D75B2767401, OS:17.5, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:22DDCC91-F611-45E7-B51E-E06AE3C16D47, OS:18.1, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:22DDCC91-F611-45E7-B51E-E06AE3C16D47, OS:18.1, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:61CEE799-6284-4314-9421-255A08171C91, OS:18.2, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:61CEE799-6284-4314-9421-255A08171C91, OS:18.2, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, id:20C19D5E-3DEF-4917-BBC3-03F0F59079A3, OS:17.0.1, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:20C19D5E-3DEF-4917-BBC3-03F0F59079A3, OS:17.0.1, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:3761F855-40CB-41AC-B26C-396D85BCB239, OS:17.2, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:3761F855-40CB-41AC-B26C-396D85BCB239, OS:17.2, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:D33436A7-E5E3-44EA-9953-52A4DE0948A6, OS:17.4, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:D33436A7-E5E3-44EA-9953-52A4DE0948A6, OS:17.4, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, id:B2F6433B-50B0-4ADA-990F-36A10F29CC28, OS:17.0.1, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:B2F6433B-50B0-4ADA-990F-36A10F29CC28, OS:17.0.1, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:9C09C541-FAB6-4763-A3BB-ED727756300B, OS:17.2, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:9C09C541-FAB6-4763-A3BB-ED727756300B, OS:17.2, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:976B6C59-35EC-4EF7-9EA0-F92E47632E00, OS:17.4, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:976B6C59-35EC-4EF7-9EA0-F92E47632E00, OS:17.4, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, id:F85E4E25-10CA-4FBB-8A63-4B944D634A67, OS:17.4, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:F85E4E25-10CA-4FBB-8A63-4B944D634A67, OS:17.4, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:0E507DC5-EAA8-4645-83D0-A350C91CBF4D, OS:17.5, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:0E507DC5-EAA8-4645-83D0-A350C91CBF4D, OS:17.5, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:B0BE9A38-D835-4466-876A-591D113B13A5, OS:18.1, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:B0BE9A38-D835-4466-876A-591D113B13A5, OS:18.1, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:2B601B5A-BDEF-49D7-ADDF-33F7DD4DAAD1, OS:18.2, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:2B601B5A-BDEF-49D7-ADDF-33F7DD4DAAD1, OS:18.2, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, id:D22901E8-C991-4CD0-945B-8CD51ECF5FC2, OS:17.4, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:D22901E8-C991-4CD0-945B-8CD51ECF5FC2, OS:17.4, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:09E006BA-C811-4F07-96D3-4736E0E2A703, OS:17.5, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:09E006BA-C811-4F07-96D3-4736E0E2A703, OS:17.5, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:973E42DF-6D30-450E-9752-95519AAE22CF, OS:18.1, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:973E42DF-6D30-450E-9752-95519AAE22CF, OS:18.1, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:C62C628F-5058-41D4-8A18-61DB21C79D8E, OS:18.2, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:C62C628F-5058-41D4-8A18-61DB21C79D8E, OS:18.2, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:350D9D72-8BE1-478C-BA81-7B4CCC93F641, OS:17.0.1, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:350D9D72-8BE1-478C-BA81-7B4CCC93F641, OS:17.0.1, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:DD919109-A4B7-409C-B2D0-12BE02B3C7BE, OS:17.2, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:DD919109-A4B7-409C-B2D0-12BE02B3C7BE, OS:17.2, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:1DD7B551-FC82-4809-A67E-0932C4F5F4B3, OS:17.4, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:1DD7B551-FC82-4809-A67E-0932C4F5F4B3, OS:17.4, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:CFE31FA5-996B-4DC5-8E35-0C3EE1509772, OS:17.5, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:CFE31FA5-996B-4DC5-8E35-0C3EE1509772, OS:17.5, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:3C256098-535D-4F8D-AB68-D81BDA5605C7, OS:18.1, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:3C256098-535D-4F8D-AB68-D81BDA5605C7, OS:18.1, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:092F1252-6989-42D0-91D2-583814D550C8, OS:18.2, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:092F1252-6989-42D0-91D2-583814D550C8, OS:18.2, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, id:C29689B3-3017-48E0-8D8A-FB8C1A2A66A8, OS:18.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, id:C29689B3-3017-48E0-8D8A-FB8C1A2A66A8, OS:18.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, id:F27C3A1A-C72D-48C1-A145-565CA4CF14A5, OS:18.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, id:F27C3A1A-C72D-48C1-A145-565CA4CF14A5, OS:18.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, id:7F122853-3646-4B1B-B7AE-AB0CEC71CDDA, OS:17.0.1, name:iPhone 15 }
+{ platform:iOS Simulator, id:7F122853-3646-4B1B-B7AE-AB0CEC71CDDA, OS:17.0.1, name:iPhone 15 }
+{ platform:iOS Simulator, id:E6FCBAC5-C3B3-480D-8B60-4413F4268D1D, OS:17.2, name:iPhone 15 }
+{ platform:iOS Simulator, id:E6FCBAC5-C3B3-480D-8B60-4413F4268D1D, OS:17.2, name:iPhone 15 }
+{ platform:iOS Simulator, id:CC147C61-710C-4FD4-91F0-13E68CB2CDE6, OS:17.4, name:iPhone 15 }
+{ platform:iOS Simulator, id:CC147C61-710C-4FD4-91F0-13E68CB2CDE6, OS:17.4, name:iPhone 15 }
+{ platform:iOS Simulator, id:E1FD8C06-854E-4BB3-AFA9-1415A9816809, OS:17.5, name:iPhone 15 }
+{ platform:iOS Simulator, id:E1FD8C06-854E-4BB3-AFA9-1415A9816809, OS:17.5, name:iPhone 15 }
+{ platform:iOS Simulator, id:35561B9D-C4BC-4BC4-A7DE-E19303AD3388, OS:18.1, name:iPhone 15 }
+{ platform:iOS Simulator, id:35561B9D-C4BC-4BC4-A7DE-E19303AD3388, OS:18.1, name:iPhone 15 }
+{ platform:iOS Simulator, id:A1598EA5-C8CB-44BE-97C5-44422FF95664, OS:18.2, name:iPhone 15 }
+{ platform:iOS Simulator, id:A1598EA5-C8CB-44BE-97C5-44422FF95664, OS:18.2, name:iPhone 15 }
+{ platform:iOS Simulator, id:C4126E26-4035-48A7-8E97-56854B9EF7DA, OS:17.0.1, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:C4126E26-4035-48A7-8E97-56854B9EF7DA, OS:17.0.1, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:E61EF43E-3900-4EF2-A5D6-16849BBFD880, OS:17.2, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:E61EF43E-3900-4EF2-A5D6-16849BBFD880, OS:17.2, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:6DAA8ABA-E936-43F9-8BF1-8F3D4A93180A, OS:17.4, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:6DAA8ABA-E936-43F9-8BF1-8F3D4A93180A, OS:17.4, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:EFB5E7F5-F334-4731-AACC-7C28D7459C2E, OS:17.5, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:EFB5E7F5-F334-4731-AACC-7C28D7459C2E, OS:17.5, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:3C694F8C-4DF4-4533-94F4-38312A1532A0, OS:18.1, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:3C694F8C-4DF4-4533-94F4-38312A1532A0, OS:18.1, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:9F94E18C-F258-49BB-8285-75203BE966EB, OS:18.2, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:9F94E18C-F258-49BB-8285-75203BE966EB, OS:18.2, name:iPhone 15 Plus }
+{ platform:iOS Simulator, id:1688F84D-3272-4E3F-8061-11924E28DF88, OS:17.0.1, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:1688F84D-3272-4E3F-8061-11924E28DF88, OS:17.0.1, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:CDB84C7C-0BAF-41C0-9CA6-7A5E0A672776, OS:17.2, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:CDB84C7C-0BAF-41C0-9CA6-7A5E0A672776, OS:17.2, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:AD5DE0B3-5046-4312-9F04-968E60564893, OS:17.4, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:AD5DE0B3-5046-4312-9F04-968E60564893, OS:17.4, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:141280BF-F388-4213-B02C-5FD3F5D375FC, OS:17.5, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:141280BF-F388-4213-B02C-5FD3F5D375FC, OS:17.5, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:C35660C3-BFCC-4783-AC0E-94B338F6D247, OS:18.1, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:C35660C3-BFCC-4783-AC0E-94B338F6D247, OS:18.1, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:26784385-E0D1-4A0E-980F-B4AF79239416, OS:18.2, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:26784385-E0D1-4A0E-980F-B4AF79239416, OS:18.2, name:iPhone 15 Pro }
+{ platform:iOS Simulator, id:2BC3FCB4-1699-423F-91E2-BC686D3D21CD, OS:17.0.1, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:2BC3FCB4-1699-423F-91E2-BC686D3D21CD, OS:17.0.1, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:9AB39F7F-941C-42A1-A018-6CC83D2216D4, OS:17.2, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:9AB39F7F-941C-42A1-A018-6CC83D2216D4, OS:17.2, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:5FBFB67E-E845-4ACE-B8E1-8A334F9D4D25, OS:17.4, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:5FBFB67E-E845-4ACE-B8E1-8A334F9D4D25, OS:17.4, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:C91911C3-3FF7-49B4-8B98-B19696BEAABC, OS:17.5, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:C91911C3-3FF7-49B4-8B98-B19696BEAABC, OS:17.5, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:3F0E9BA5-70D7-4487-85D2-E287526A7E78, OS:18.1, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:3F0E9BA5-70D7-4487-85D2-E287526A7E78, OS:18.1, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:D88CEF50-6331-4E68-A1BD-1FD86DF292FE, OS:18.2, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:D88CEF50-6331-4E68-A1BD-1FD86DF292FE, OS:18.2, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, id:C54AF47C-ABF8-4A7A-91D6-B0DEF686C9CD, OS:18.1, name:iPhone 16 }
+{ platform:iOS Simulator, id:C54AF47C-ABF8-4A7A-91D6-B0DEF686C9CD, OS:18.1, name:iPhone 16 }
+{ platform:iOS Simulator, id:FFE84651-9608-4BAC-AF71-DD317E75EE1B, OS:18.2, name:iPhone 16 }
+{ platform:iOS Simulator, id:FFE84651-9608-4BAC-AF71-DD317E75EE1B, OS:18.2, name:iPhone 16 }
+{ platform:iOS Simulator, id:F4660777-A2E9-4BF9-9B6A-A847F213C88D, OS:18.1, name:iPhone 16 Plus }
+{ platform:iOS Simulator, id:F4660777-A2E9-4BF9-9B6A-A847F213C88D, OS:18.1, name:iPhone 16 Plus }
+{ platform:iOS Simulator, id:2AA6AA9E-4255-4577-AAC5-9CB5A63F4F7B, OS:18.2, name:iPhone 16 Plus }
+{ platform:iOS Simulator, id:2AA6AA9E-4255-4577-AAC5-9CB5A63F4F7B, OS:18.2, name:iPhone 16 Plus }
+{ platform:iOS Simulator, id:1D642742-4862-49B2-8989-E77312555A95, OS:18.1, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:1D642742-4862-49B2-8989-E77312555A95, OS:18.1, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:46B0CCB2-1157-4700-B9A1-1381A19A4CBF, OS:18.2, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:46B0CCB2-1157-4700-B9A1-1381A19A4CBF, OS:18.2, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:9DB4F2AB-B343-4521-9397-8DD321E60A72, OS:18.1, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, id:9DB4F2AB-B343-4521-9397-8DD321E60A72, OS:18.1, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, id:E899C594-244F-4212-844B-80888EE8947D, OS:18.2, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, id:E899C594-244F-4212-844B-80888EE8947D, OS:18.2, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, id:35D8B5FE-04C8-4F09-B4E9-1DF65C0BBF08, OS:17.0.1, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:35D8B5FE-04C8-4F09-B4E9-1DF65C0BBF08, OS:17.0.1, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:643D23C1-D64A-48F1-BC94-1093BDEA669B, OS:17.2, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:643D23C1-D64A-48F1-BC94-1093BDEA669B, OS:17.2, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:C56E58FF-D487-457D-9E21-42BE8D5246A0, OS:17.4, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:C56E58FF-D487-457D-9E21-42BE8D5246A0, OS:17.4, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:5643D411-9423-4E38-9D2F-4758005A9869, OS:17.5, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:5643D411-9423-4E38-9D2F-4758005A9869, OS:17.5, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:7921D6E3-26F2-4129-BDDE-16C79D33B61A, OS:18.1, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:7921D6E3-26F2-4129-BDDE-16C79D33B61A, OS:18.1, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:7F86EE80-EF6D-4A3F-8C3F-7D7B9C34AA28, OS:18.2, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, id:7F86EE80-EF6D-4A3F-8C3F-7D7B9C34AA28, OS:18.2, name:iPhone SE (3rd generation) }
+Prepare packages
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'BillPro' in project 'BillPro' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -v
+
+ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 3eaaa21d7a4c3a61f32f5759d8f1457a
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/XCBuildData/3eaaa21d7a4c3a61f32f5759d8f1457a.xcbuilddata
+ClangStatCache /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache
+    cd /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products
+    cd /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex
+    cd /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos
+    cd /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos
+
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+    cd /Users/runner/work/BillPro/BillPro/BillPro.xcodeproj
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+
+MkDir /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/BillPro.app (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/BillPro.app
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/all-product-headers.yaml (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-non-framework-target-headers.hmap (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.LinkFileList (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.SwiftFileList (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-OutputFileMap.json (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-OutputFileMap.json
+
+ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/BillPro.app/Info.plist /Users/runner/work/BillPro/BillPro/BillPro/Info.plist (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    builtin-infoPlistUtility /Users/runner/work/BillPro/BillPro/BillPro/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/BillPro.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -requiredArchitecture arm64 -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/BillPro.app/Info.plist
+
+SwiftDriver BillPro normal arm64 com.apple.xcode.tools.swift.compiler (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    builtin-SwiftDriver -- /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name BillPro -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.SwiftFileList -sdk /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -target arm64-apple-ios15.0 -enable-bare-slash-regex -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -F /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-Swift.h -working-directory /Users/runner/work/BillPro/BillPro -no-emit-module-separately-wmo
+
+SwiftDriver\ Compilation BillPro normal arm64 com.apple.xcode.tools.swift.compiler (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    builtin-Swift-Compilation -- /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name BillPro -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.SwiftFileList -sdk /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -target arm64-apple-ios15.0 -enable-bare-slash-regex -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -F /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro-Swift.h -working-directory /Users/runner/work/BillPro/BillPro -no-emit-module-separately-wmo
+
+SwiftCompile normal arm64 Compiling\ BillProApp.swift,\ CalculatorOverlay.swift,\ ContentView.swift,\ Formatting.swift,\ HomeView.swift,\ InvoiceView.swift,\ ItemPickerView.swift,\ Models.swift,\ OrderEditorView.swift,\ PDFService.swift,\ Persistence.swift,\ PrintShareService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/BillProApp.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/CalculatorOverlay.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ContentView.swift /Users/runner/work/BillPro/BillPro/BillPro/Utils/Formatting.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/HomeView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/InvoiceView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ItemPickerView.swift /Users/runner/work/BillPro/BillPro/BillPro/Models/Models.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/OrderEditorView.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PDFService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/Persistence.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    builtin-swiftTaskExecution -- /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/runner/work/BillPro/BillPro/BillPro/App/BillProApp.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/CalculatorOverlay.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ContentView.swift /Users/runner/work/BillPro/BillPro/BillPro/Utils/Formatting.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/HomeView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/InvoiceView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ItemPickerView.swift /Users/runner/work/BillPro/BillPro/BillPro/Models/Models.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/OrderEditorView.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PDFService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/Persistence.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift -supplementary-output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/supplementaryOutputs-1 -target arm64-apple-ios15.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -F /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -no-color-diagnostics -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -O -serialize-debugging-options -const-gather-protocols-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/BillPro/BillPro -resource-dir /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources -module-name BillPro -frontend-parseable-output -disable-clang-spi -target-sdk-version 17.5 -target-sdk-name iphoneos17.5 -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/local/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -enable-default-cmo -num-threads 3 -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillProApp.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/CalculatorOverlay.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ContentView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Formatting.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/HomeView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/InvoiceView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ItemPickerView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Models.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/OrderEditorView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PDFService.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Persistence.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PrintShareService.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillProApp.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/CalculatorOverlay.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ContentView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Formatting.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/HomeView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/InvoiceView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ItemPickerView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Models.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/OrderEditorView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PDFService.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Persistence.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PrintShareService.o
+
+CompileSwift normal arm64 (in target 'BillPro' from project 'BillPro')
+    cd /Users/runner/work/BillPro/BillPro
+    /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -c /Users/runner/work/BillPro/BillPro/BillPro/App/BillProApp.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/CalculatorOverlay.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ContentView.swift /Users/runner/work/BillPro/BillPro/BillPro/Utils/Formatting.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/HomeView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/InvoiceView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ItemPickerView.swift /Users/runner/work/BillPro/BillPro/BillPro/Models/Models.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/OrderEditorView.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PDFService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/Persistence.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift -supplementary-output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/supplementaryOutputs-1 -target arm64-apple-ios15.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -F /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos -no-color-diagnostics -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -O -serialize-debugging-options -const-gather-protocols-file /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillPro_const_extract_protocols.json -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/BillPro/BillPro -resource-dir /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/BillPro-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/DerivedSources -module-name BillPro -frontend-parseable-output -disable-clang-spi -target-sdk-version 17.5 -target-sdk-name iphoneos17.5 -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/local/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -enable-default-cmo -num-threads 3 -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillProApp.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/CalculatorOverlay.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ContentView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Formatting.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/HomeView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/InvoiceView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ItemPickerView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Models.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/OrderEditorView.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PDFService.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Persistence.o -o /Users/runner/Library/Developer/Xcode/DerivedData/BillPro-gjyuztynundylchbpokjskqevmhv/Build/Intermediates.noindex/BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PrintShareService.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/BillProApp.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/CalculatorOverlay.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ContentView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Formatting.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/HomeView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/InvoiceView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/ItemPickerView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Models.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/OrderEditorView.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PDFService.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/Persistence.o -index-unit-output-path /BillPro.build/Release-iphoneos/BillPro.build/Objects-normal/arm64/PrintShareService.o
+/Users/runner/work/BillPro/BillPro/BillPro/Views/InvoiceView.swift:106:45: error: type 'UIColor' has no member 'systemThinMaterial'
+        .padding().background(Color(UIColor.systemThinMaterial))
+                                    ~~~~~~~ ^~~~~~~~~~~~~~~~~~
+/Users/runner/work/BillPro/BillPro/BillPro/Models/Models.swift:28:74: error: 'NSDecimalNumber' is not implicitly convertible to 'Decimal'; did you mean to use 'as' to explicitly convert?
+    var totalQuantity: Decimal { itemsArray.reduce(Decimal(0)) { $0 + $1.quantity as Decimal } }
+                                                                         ^
+                                                                      (           as Decimal)
+/Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift:20:10: warning: result of 'activityViewController(_:itemForActivityType:)' has different optionality than expected by protocol 'UIActivityItemSource'
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any { shareURL as Any }
+         ^
+                                                                                                                                                      ?
+UIKit.UIActivityItemSource:5:10: note: requirement 'activityViewController(_:itemForActivityType:)' declared here
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any?
+         ^
+/Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift:16:30: warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead
+        UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true)
+                             ^
+
+warning: no rule to process file '/Users/runner/work/BillPro/BillPro/BillPro/BillProModel.xcdatamodeld' of type 'file' for architecture 'arm64' (in target 'BillPro' from project 'BillPro')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileSwift normal arm64 (in target 'BillPro' from project 'BillPro')
+	SwiftCompile normal arm64 Compiling\ BillProApp.swift,\ CalculatorOverlay.swift,\ ContentView.swift,\ Formatting.swift,\ HomeView.swift,\ InvoiceView.swift,\ ItemPickerView.swift,\ Models.swift,\ OrderEditorView.swift,\ PDFService.swift,\ Persistence.swift,\ PrintShareService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/BillProApp.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/CalculatorOverlay.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ContentView.swift /Users/runner/work/BillPro/BillPro/BillPro/Utils/Formatting.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/HomeView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/InvoiceView.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/ItemPickerView.swift /Users/runner/work/BillPro/BillPro/BillPro/Models/Models.swift /Users/runner/work/BillPro/BillPro/BillPro/Views/OrderEditorView.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PDFService.swift /Users/runner/work/BillPro/BillPro/BillPro/App/Persistence.swift /Users/runner/work/BillPro/BillPro/BillPro/Services/PrintShareService.swift (in target 'BillPro' from project 'BillPro')
+(2 failures)
+BUILD_EXIT_CODE=65
