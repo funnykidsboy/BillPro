@@ -14,9 +14,18 @@ jobs:
           brew install xcodegen ldid
       - name: Generate Xcode project
         run: xcodegen generate
-      - name: Build .app (no signing)
+      - name: Build .app (no signing, with logs)
         run: |
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             build
+          set -x
+          xcodebuild -list
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
+            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build | tee build.log
+      - name: Upload build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
       - name: Find built app
         id: findapp
         run: |
@@ -27,17 +36,17 @@ jobs:
           mkdir -p signed
           cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
           # Minimal entitlements for TrollStore permasigning
-          cat > signed/entitlements.plist <<'EOF'
+          cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
           <dict>
-            <key>application-identifier</key><string>com.khanh.billpro</string>
+            <key>application-identifier</key><string>com.example.BillPro</string>
             <key>get-task-allow</key><true/>
-            <key>keychain-access-groups</key><array><string>com.khanh.billpro</string></array>
+            <key>keychain-access-groups</key><array><string>com.example.BillPro</string></array>
           </dict>
           </plist>
-          EOF
+          PLIST
           ldid -Ssigned/entitlements.plist signed/BillPro.app
       - name: Package IPA
         run: |
