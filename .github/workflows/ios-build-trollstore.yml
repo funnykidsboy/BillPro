@@ -31,13 +31,29 @@ jobs:
           echo "---- objectVersion ----"; grep -m1 'objectVersion' "$PBX" || true
           echo "---- compatibilityVersion ----"; grep -m1 'compatibilityVersion' "$PBX" || true
 
-      - name: Build .app (no signing, print logs)
+      - name: Build .app (no signing, save & print logs)
         run: |
           set -x
-          xcodebuild -list -project BillPro.xcodeproj
+          touch build.log
+          echo "=== xcodebuild -list ===" | tee -a build.log
+          xcodebuild -list -project BillPro.xcodeproj 2>&1 | tee -a build.log
+          echo "=== SHOW BUILD SETTINGS ===" | tee -a build.log
+          xcodebuild -showBuildSettings -project BillPro.xcodeproj -scheme BillPro 2>&1 | tee -a build.log || true
+          echo "=== START BUILD ===" | tee -a build.log
+          set +e
+          set -o pipefail
           xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            build
+            build 2>&1 | tee -a build.log
+          echo "BUILD_EXIT_CODE=$?" | tee -a build.log
+          set -e
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
 
       - name: Find built app
         id: findapp
