@@ -9,37 +9,53 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Xóa project cũ nếu có (tránh xung đột format)
       - name: Remove old .xcodeproj if exists
-        run: |
-          echo "Removing old .xcodeproj if exists..."
-          rm -rf BillPro.xcodeproj
+        run: rm -rf BillPro.xcodeproj
 
-      - name: Install tools
+      # Cài XcodeGen 2.43.0 (pin version, tránh format 77 của Xcode 16)
+      - name: Install XcodeGen 2.43.0 + ldid
         run: |
-          brew update
-          brew install xcodegen ldid
+          brew install ldid
+          curl -L -o xcodegen.zip https://github.com/yonaskolb/XcodeGen/releases/download/2.43.0/xcodegen-2.43.0.zip
+          unzip -q xcodegen.zip
+          sudo mv xcodegen /usr/local/bin/xcodegen
+          xcodegen version
 
       - name: Generate Xcode project
         run: xcodegen generate
 
-      - name: Build .app (no signing, print logs to console)
+      # Fallback: nếu vì lý do nào đó objectVersion vẫn > 75 thì hạ về 75 + compat 15.0
+      - name: Force downgrade project format to Xcode 15
+        run: |
+          PBX=BillPro.xcodeproj/project.pbxproj
+          test -f "$PBX" || { echo "missing $PBX"; exit 1; }
+          /usr/bin/perl -pi -e 's/objectVersion = 7[6-9];/objectVersion = 75;/g' "$PBX"
+          /usr/bin/perl -pi -e 's/compatibilityVersion = "Xcode 1[6-9](\\.0)?";/compatibilityVersion = "Xcode 15.0";/g' "$PBX"
+          echo "---- objectVersion ----"
+          grep -m1 'objectVersion' "$PBX" || true
+          echo "---- compatibilityVersion ----"
+          grep -m1 'compatibilityVersion' "$PBX" || true
+
+      - name: Build .app (no signing, print logs)
         run: |
           set -x
           xcodebuild -list -project BillPro.xcodeproj
-          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO             build
+          xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
+            IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build
 
       - name: Find built app
         id: findapp
         run: |
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "BillPro.app" -type d | head -n 1)
           echo "APP_PATH=$APP_PATH"
-          echo "APP_PATH=$APP_OUTPUT" >> $GITHUB_OUTPUT
+          echo "APP_PATH=$APP_PATH" >> $GITHUB_OUTPUT
 
       - name: Ad-hoc sign with ldid (TrollStore)
         run: |
           mkdir -p signed
-          cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app || true
-          # Minimal entitlements for TrollStore permasigning
+          cp -R "${{ steps.findapp.outputs.APP_PATH }}" signed/BillPro.app
           cat > signed/entitlements.plist <<'PLIST'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -51,21 +67,15 @@ jobs:
           </dict>
           </plist>
           PLIST
-          if [ -d "signed/BillPro.app" ]; then ldid -Ssigned/entitlements.plist signed/BillPro.app; fi
+          ldid -Ssigned/entitlements.plist signed/BillPro.app
 
       - name: Package IPA
         run: |
-          if [ -d "signed/BillPro.app" ]; then
-            mkdir -p Payload
-            cp -R signed/BillPro.app Payload/
-            zip -r BillPro_iOS15_TrollStore.ipa Payload
-          else
-            echo "No app to package"
-            exit 1
-          fi
+          mkdir -p Payload
+          cp -R signed/BillPro.app Payload/
+          zip -r BillPro_iOS15_TrollStore.ipa Payload
 
       - name: Upload IPA
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: BillPro-iOS15-IPA
