@@ -18,10 +18,14 @@ jobs:
         run: |
           set -x
           xcodebuild -list
+          set +e
           xcodebuild -project BillPro.xcodeproj -scheme BillPro -configuration Release -sdk iphoneos \
             IPHONEOS_DEPLOYMENT_TARGET=15.0 CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
             build | tee build.log
+          echo "BUILD_EXIT_CODE=$?" >> $GITHUB_ENV
+          set -e
       - name: Upload build log
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: build-log
