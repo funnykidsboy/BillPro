@@ -103,7 +103,7 @@ struct InvoiceView: View {
             Spacer()
             Button { sharePDF() } label: { Label("Share", systemImage: "square.and.arrow.up") }
         }
-        .padding().background(Color(UIColor.systemThinMaterial))
+        .padding().background(.ultraThinMaterial)
     }
 
     func copy(_ item: OrderItem) {
