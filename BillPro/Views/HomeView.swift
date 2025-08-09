@@ -1,57 +1,45 @@
 import SwiftUI
-import CoreData
 
 struct HomeView: View {
-    @Environment(\.managedObjectContext) private var context
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Order.createdAt, ascending: false)])
-    private var orders: FetchedResults<Order>
-
     @State private var searchText = ""
-    @State private var showNewOrder = false
+    @State private var orders: [Order] = [
+        Order(
+            customerName: "Nguyễn Văn A",
+            phone: "0900000000",
+            deliveryDate: Date(),
+            items: [
+                Item(name: "Áo thun", unitPrice: 120000, quantity: 2),
+                Item(name: "Quần jean", unitPrice: 350000, quantity: 1)
+            ]
+        )
+    ]
+
+    var filtered: [Order] {
+        let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if q.isEmpty { return orders }
+        return orders.filter { o in
+            o.customerName.lowercased().contains(q) || o.phone.lowercased().contains(q)
+        }
+    }
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(filteredOrders, id: \.id) { order in
+                ForEach(filtered) { order in
                     NavigationLink(destination: InvoiceView(order: order)) {
                         VStack(alignment: .leading, spacing: 4) {
+                            Text(order.customerName).font(.headline)
                             HStack {
-                                Text(order.customerName).font(.headline)
+                                Text(order.phone).foregroundColor(.secondary)
                                 Spacer()
-                                Text(Currency.string(order.total))
-                                    .font(.subheadline)
-                            }
-                            HStack(spacing: 12) {
-                                Label(order.customerPhone, systemImage: "phone")
-                                Label(order.deliveryDate.toString(), systemImage: "calendar")
-                            }
-                            .font(.caption).foregroundColor(.secondary)
+                                Text(order.deliveryDate, style: .date).foregroundColor(.secondary)
+                            }.font(.caption)
                         }
-                    }
-                    .swipeActions {
-                        Button(role: .destructive) {
-                            context.delete(order)
-                            try? context.save()
-                        } label: { Label("Xoá", systemImage: "trash") }
                     }
                 }
             }
-            .navigationBarTitle("Đơn hàng")
-            .navigationBarItems(trailing: Button(action: { showNewOrder = true }) { Image(systemName: "plus.circle.fill") })
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Tìm tên hoặc SĐT")
-            .sheet(isPresented: $showNewOrder) {
-                OrderEditorView()
-                    .environment(\.managedObjectContext, context)
-            }
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-
-    var filteredOrders: [Order] {
-        orders.filter { o in
-            searchText.isEmpty ||
-            o.customerName.localizedCaseInsensitiveContains(searchText) ||
-            o.customerPhone.localizedCaseInsensitiveContains(searchText)
+            .navigationTitle("Đơn hàng")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
     }
 }
